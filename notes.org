@@ -1,0 +1,26 @@
+* Let Over Lambda (by Doug Hoyte) Notes and Quotes
+- Macros are an advanced Lisp subject
+- Another resource is "On Lisp" by Paul Graham
+- Macros are for transforming Lisp programs into other programs
+- Macros enable productivity
+- Macros are powerful but can also be dangerous
+- "Macro writing is a reflective and iterative process.
+- Macros help eliminate boiler-plate code.
+- "Macros let you program smarter, not harder"
+- "Writing complicated macros is an iterative process."
+- Macro programming is meta-programming
+- The power of macros in part falls out of the notion that Lisp is written in Lisp
+- Macros are for creating more useful programming abstractions not to improve the efficiency of code.
+- Macros are for when you want to do something to arguments other than evaluate them. This is altering control structure.
+
+
+* More thoughts
+- Let's reinvent let
+- Dynamic test creation
+- Dynamic mock creation
+- logosity (@logosity) 11/12/11 7:32 AM OH: at #clojure_conj: Macros are your own personal mini-compiler
+
+
+
+
+
