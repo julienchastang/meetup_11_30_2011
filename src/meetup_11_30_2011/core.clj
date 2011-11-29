@@ -46,11 +46,6 @@
         (list 'prn (list 'quote val) "is" 'x)
         'x))
 
-(defmacro ? [val]
-  `(let [x# ~val]
-    (prn '~val '~'is x#)
-    x#))
-
 (defmacro ?
   ^{:doc "A useful debugging tool when you can't figure out what's going on: wrap a form with ?, and the form will be printed alongside its result. The result will still be passed along."
     :author "Alan Malloy (@amalloy)"}
