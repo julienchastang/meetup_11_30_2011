@@ -13,14 +13,28 @@
 - Macros are for creating more useful programming abstractions not to improve the efficiency of code.
 - Macros are for when you want to do something to arguments other than evaluate them. This is altering control structure.
 
+* Clojure in Action
+- "Macros are tiny, inline code generators that any programmer can use to modify program code or even generate arbitrary code on the fly."
+- Macros allow you to programmatically manipulate the abstract syntax tree (AST). In Clojure and Lisp, remember that you are programming directly to the abstract syntax tree.
+- Note that DSLs in Clojure always look like Lisp.
 
 * More thoughts
 - Let's reinvent let
 - Dynamic test creation
 - Dynamic mock creation
 - logosity (@logosity) 11/12/11 7:32 AM OH: at #clojure_conj: Macros are your own personal mini-compiler
+- Helpful in the elimination of repetitive, boiler-plate code.
 
 
+* Preamble
+- Lisps are homoiconic which means they treat code as data. This sets the stage for macros. 
+- (println "Hello World") is code, and '(println "Hello World") is data.
+- Quoted form are not evaluated. See Practical Clojure ch 12
 
+- Macros return forms, not values.
+- Macro arguments are not evaluated.
+- Macros are evaluated at compile time only.
+
+- Show a diagram of the Clojure compilation process.
 
 

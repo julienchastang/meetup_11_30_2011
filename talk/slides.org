@@ -1,0 +1,67 @@
+* Macros
+
+* What are Macros?
+- Macros are programs that write programs AKA meta-programming.
+- Homoiconicity. Code and data are treated equally. 
+- Single quote prevents evaluation
+- (println "Hello World") is code, and '(println "Hello World") is data.
+- [show eval example]
+
+* Why write macros
+- Elimination of boiler plate code or repetitive writing of code.
+- Manipulate the core language
+- DSLs (which tend to look like Lisp).
+- Don't want function arguments evaluated.
+- Enable programmer productivity.
+
+* Macro characteristics
+- Return forms, not values.
+- Provides a layer of (syntactic) abstraction between you and the lisp reader.
+- Can extend the lisp reader to meet your needs
+- Arguments are not evaluated.
+- Evaluated at compile time only.
+
+* Abstract Syntax Tree
+- Many languages are lexed and parsed to arrive at a AST
+- In Lisp, you program directly to the AST.
+- [Insert diagrams]
+- Moreover this AST simply is a lisp data structure that you can manipulate with the power of lisp!
+- Macros return forms, not values, but then those forms are evaluated to return values.
+
+* Tools and Unless example
+- Macro development is an iterative process at the REPL
+- Create a macro with defmacro which takes the same args as defn
+- Macros are only expanded once during compilation. After that the expanded form is used.
+- Clojure has 2 quoting forms. ' (quote) and ` (syntax)
+- With the single quote, the symbol just evaluates to itself
+- [unless example]
+- macroexpand macroexpand-1
+
+* More tools and more unless
+- Writing "list" all the time gets tedious, so there is templating with the `
+- Enter the literal form and splice out what you need.
+- Note symbols within the template are qualified the complete namespace.
+- You splice out with the ~ or with ~@
+- building layers of abstraction to later tear them down
+- let bindings in macros are tricky since you can interfere with the name space. The macro system can generate "safe" symbols with the # suffix.
+- [more unless example]
+
+* ? debugging example 
+- 
+
+* Much of the core Clojure API is done with macros
+- comment
+- declare
+- ->
+
+* Caveats
+- Prefer functions over macros.
+- Macros can be an example of premature optimization
+- Macros can get quite gnarly and you can lose track of weather your code is running at compile time or runtime.
+- Several macro libs were re-written to use macros less, e.g., Enlive, clojureQL
+- Christophe Grand, only add macros at the end to clean up ugly APIs.
+
+* Resources
+- All the Clojure books.
+- "Let Over Lambda" (by Doug Hoyte)
+- "On Lisp" by Paul Graham
